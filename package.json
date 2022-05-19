@@ -6,7 +6,7 @@
 	"author": "kolesov.dev",
 	"license": "ISC",
 	"scripts": {
-		"start": "node ./lessons/process.js"
+		"start": "node ./lessons/path.js"
 	},
 	"dependencies": {
 		"cross-env": "^7.0.3",
