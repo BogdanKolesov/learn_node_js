@@ -5,6 +5,9 @@
 	"main": "index.js",
 	"author": "kolesov.dev",
 	"license": "ISC",
+	"scripts": {
+		"start": "cross-env PORT=5000 node ./lessons/process.js"
+	},
 	"dependencies": {
 		"express": "^4.18.1"
 	},
