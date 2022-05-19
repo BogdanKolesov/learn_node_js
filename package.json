@@ -6,9 +6,11 @@
 	"author": "kolesov.dev",
 	"license": "ISC",
 	"scripts": {
-		"start": "cross-env PORT=5000 node ./lessons/process.js"
+		"start": "node ./lessons/process.js"
 	},
 	"dependencies": {
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.1",
 		"express": "^4.18.1"
 	},
 	"devDependencies": {
