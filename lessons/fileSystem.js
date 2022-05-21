@@ -66,8 +66,38 @@ const path = require('path')
 //     }))
 // }
 
+// //Чтение файла
+
+// const readFileAsync = async (path) => {
+//     return new Promise((resolve, reject) => fs.readFile(path, { encoding: 'utf-8' },
+//         (err, data) => {
+//             if (err) {
+//                 return reject(err.message)
+//             }
+//             resolve(data)
+//         }))
+// }
+
+
+//Удаление файла
+// const removeFileAsync = async (path) => {
+//     return new Promise((resolve, reject) => fs.rm(path,
+//         (err) => {
+//             if (err) {
+//                 return reject(err.message)
+//             }
+//             resolve()
+//         }))
+// }
+
+
+// removeFileAsync(path.resolve(__dirname, 'test.txt'))
+//     .then(() => console.log('removed'))
+
 // writeFileAsync(path.resolve(__dirname, 'test.txt'), 'oooooo')
-//     .then(() => appendFileAsync('text1'))
-//     .then(() => appendFileAsync('text2'))
-//     .then(() => appendFileAsync('text3'))
+//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text1'))
+//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text2'))
+//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text3'))
+//     .then(() => readFileAsync(path.resolve(__dirname, 'test.txt')))
+//     .then(data => console.log(data))
 //     .catch(err => console.log('err'))
