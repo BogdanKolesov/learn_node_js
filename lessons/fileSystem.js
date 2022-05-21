@@ -48,35 +48,35 @@ const path = require('path')
 
 ////////////////
 //Без fsPromise
-// const writeFileAsync = async (path, data) => {
-//     return new Promise((resolve, reject) => fs.writeFile(path, data, (err) => {
-//         if (err) {
-//             return reject(err.message)
-//         }
-//         resolve()
-//     }))
-// }
+const writeFileAsync = async (path, data) => {
+    return new Promise((resolve, reject) => fs.writeFile(path, data, (err) => {
+        if (err) {
+            return reject(err.message)
+        }
+        resolve()
+    }))
+}
 
-// const appendFileAsync = async (path, data) => {
-//     return new Promise((resolve, reject) => fs.appendFile(path, data, (err) => {
-//         if (err) {
-//             return reject(err.message)
-//         }
-//         resolve()
-//     }))
-// }
+const appendFileAsync = async (path, data) => {
+    return new Promise((resolve, reject) => fs.appendFile(path, data, (err) => {
+        if (err) {
+            return reject(err.message)
+        }
+        resolve()
+    }))
+}
 
-// //Чтение файла
+//Чтение файла
 
-// const readFileAsync = async (path) => {
-//     return new Promise((resolve, reject) => fs.readFile(path, { encoding: 'utf-8' },
-//         (err, data) => {
-//             if (err) {
-//                 return reject(err.message)
-//             }
-//             resolve(data)
-//         }))
-// }
+const readFileAsync = async (path) => {
+    return new Promise((resolve, reject) => fs.readFile(path, { encoding: 'utf-8' },
+        (err, data) => {
+            if (err) {
+                return reject(err.message)
+            }
+            resolve(data)
+        }))
+}
 
 
 //Удаление файла
@@ -94,10 +94,11 @@ const path = require('path')
 // removeFileAsync(path.resolve(__dirname, 'test.txt'))
 //     .then(() => console.log('removed'))
 
-// writeFileAsync(path.resolve(__dirname, 'test.txt'), 'oooooo')
-//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text1'))
-//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text2'))
-//     .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), 'text3'))
-//     .then(() => readFileAsync(path.resolve(__dirname, 'test.txt')))
-//     .then(data => console.log(data))
-//     .catch(err => console.log('err'))
+writeFileAsync(path.resolve(__dirname, 'test.txt'), 'oooooo')
+    .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), ' text1'))
+    .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), ' text2'))
+    .then(() => appendFileAsync(path.resolve(__dirname, 'test.txt'), ' text3'))
+    .then(() => readFileAsync(path.resolve(__dirname, 'test.txt')))
+    .then(data => console.log(data.split(' ').length))
+
+    .catch(err => console.log('err'))
